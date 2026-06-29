@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Admission | Sankalp Computer Academy</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .form-section {
+            margin-bottom: var(--spacing-2xl);
+            padding-bottom: var(--spacing-xl);
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .form-section-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-label {
+            font-weight: 500;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+        }
+        
+        .form-input, .form-select {
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: all var(--transition-fast);
+        }
+        
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .file-upload {
+            border: 2px dashed #cbd5e1;
+            padding: 2rem;
+            text-align: center;
+            border-radius: var(--radius-md);
+            background: #f8fafc;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .file-upload:hover {
+            border-color: var(--primary);
+            background: #eff6ff;
+        }
+        
+        @media (max-width: 640px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background">
+        <!-- Main Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i data-lucide="monitor"></i>
+                </div>
+                <div class="logo-text">
+                    Sankalp Academy
+                    <span class="logo-tagline">Innovation Through Education</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+                <div class="nav-item"><a href="about.html" class="nav-link">About Us</a></div>
+                <div class="nav-item"><a href="courses.html" class="nav-link">Courses</a></div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">Student Zone <i data-lucide="chevron-down" class="inline w-4 h-4"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="admission.html" class="dropdown-item">Online Registration</a>
+                        <a href="notebook.html" class="dropdown-item">Notebooks</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+            </nav>
+
+            <div class="header-actions">
+                <a href="admission.html" class="btn btn-primary">Apply Now</a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-8">
+                <h1 class="section-title">Online Admission Form</h1>
+                <p class="section-subtitle">Take the first step towards a successful career. Fill out the form below to register.</p>
+            </div>
+            
+            <div class="form-container">
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    
+                    <!-- Section 1: Course Details -->
+                    <div class="form-section">
+                        <h3 class="form-section-title"><i data-lucide="book-open"></i> Course Selection</h3>
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label class="form-label">Select Course</label>
+                                <select class="form-select" required>
+                                    <option value="" disabled selected>Select a course...</option>
+                                    <option value="adca">ADCA (Advanced Diploma in Computer Applications)</option>
+                                    <option value="ccc">CCC (Course on Computer Concepts)</option>
+                                    <option value="olevel">O-Level (NIELIT)</option>
+                                    <option value="tally">Tally Prime</option>
+                                    <option value="webdev">Web Development</option>
+                                    <option value="graphics">Graphics Designing</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 2: Personal Details -->
+                    <div class="form-section">
+                        <h3 class="form-section-title"><i data-lucide="user"></i> Personal Details</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Student Name</label>
+                                <input type="text" class="form-input" placeholder="Enter full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Date of Birth</label>
+                                <input type="date" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Father's Name</label>
+                                <input type="text" class="form-input" placeholder="Father's full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Mother's Name</label>
+                                <input type="text" class="form-input" placeholder="Mother's full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Gender</label>
+                                <select class="form-select" required>
+                                    <option value="" disabled selected>Select gender...</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Highest Qualification</label>
+                                <input type="text" class="form-input" placeholder="e.g., 10th, 12th, Graduate" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 3: Contact Details -->
+                    <div class="form-section">
+                        <h3 class="form-section-title"><i data-lucide="phone"></i> Contact Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Mobile Number</label>
+                                <input type="tel" class="form-input" placeholder="10-digit mobile number" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-input" placeholder="example@email.com" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label class="form-label">Full Address</label>
+                                <input type="text" class="form-input" placeholder="Street address, locality" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-input" placeholder="e.g., Ayodhya" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">PIN Code</label>
+                                <input type="text" class="form-input" placeholder="e.g., 224001" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Section 4: Documents Upload -->
+                    <div class="form-section" style="border-bottom: none;">
+                        <h3 class="form-section-title"><i data-lucide="upload"></i> Upload Documents</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Passport Size Photo</label>
+                                <div class="file-upload">
+                                    <i data-lucide="image" class="w-8 h-8 text-secondary mb-2 mx-auto"></i>
+                                    <p class="text-sm text-secondary">Click to upload photo</p>
+                                    <input type="file" style="display: none;" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Aadhaar Card</label>
+                                <div class="file-upload">
+                                    <i data-lucide="file-text" class="w-8 h-8 text-secondary mb-2 mx-auto"></i>
+                                    <p class="text-sm text-secondary">Click to upload Aadhaar</p>
+                                    <input type="file" style="display: none;" accept="image/*,.pdf">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 300px; padding: 1rem; font-size: 1.125rem;">
+                            Submit Application <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo footer-logo">
+                        <div class="logo-icon" style="width: 32px; height: 32px;"><i data-lucide="monitor" style="width: 18px;"></i></div>
+                        Sankalp Academy
+                    </a>
+                    <p class="footer-desc">Providing premium computer education and professional training to build your future. Empowering youth with practical skills.</p>
+                    <div class="top-header-social" style="color: white;">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">All Courses</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Student Zone</h4>
+                    <ul class="footer-links">
+                        <li><a href="admission.html">Online Registration</a></li>
+                        <li><a href="notebook.html">Notebooks</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li><i data-lucide="map-pin" class="text-accent mt-1"></i> Hyderganj Market, Ayodhya, Uttar Pradesh</li>
+                        <li><i data-lucide="phone" class="text-accent mt-1"></i> +91 8808800266<br>+91 8808807636</li>
+                        <li><i data-lucide="mail" class="text-accent mt-1"></i> sankalpacademy.in@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sankalp Computer Academy. All rights reserved.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

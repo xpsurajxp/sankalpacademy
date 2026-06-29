@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebooks | Sankalp Computer Academy</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
+            padding: var(--spacing-3xl) 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .breadcrumb {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+        
+        .breadcrumb a {
+            color: white;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--accent);
+        }
+
+        /* PDF Modal Styles */
+        .pdf-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .pdf-modal.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .pdf-modal-header {
+            background: var(--surface);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .pdf-modal-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .pdf-modal-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+            padding: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .pdf-modal-close:hover {
+            color: var(--error);
+        }
+
+        .pdf-modal-body {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .pdf-modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+        <!-- Top Header -->
+    <div class="top-header">
+        <div class="container top-header-flex">
+            <div class="top-email">
+                <span><i data-lucide="mail" class="w-4 h-4 mr-2"></i> <a href="mailto:sankalpacademy.in@gmail.com">sankalpacademy.in@gmail.com</a></span>
+            </div>
+            <div class="top-phones">
+                <span><i data-lucide="phone" class="w-4 h-4 mr-2"></i> <a href="https://wa.me/918808800266" target="_blank">+91 8808800266</a>, <a href="tel:+918808807636">+91 8808807636</a></span>
+            </div>
+        </div>
+    </div>
+
+        <!-- Main Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i data-lucide="monitor"></i>
+                </div>
+                <div class="logo-text">
+                    Sankalp Academy
+                    <span class="logo-tagline">Innovation Through Education</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+                <div class="nav-item"><a href="about.html" class="nav-link">About Us</a></div>
+                <div class="nav-item"><a href="courses.html" class="nav-link">Courses</a></div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">Student Zone <i data-lucide="chevron-down" class="inline w-4 h-4"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="admission.html" class="dropdown-item">Online Registration</a>
+                        <a href="notebook.html" class="dropdown-item">Notebooks</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+            </nav>
+
+            <div class="header-actions">
+                <a href="admission.html" class="btn btn-primary">Apply Now</a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Notebook Library</h1>
+            <p class="breadcrumb mt-2" style="font-size: 1.125rem;">Open course-wise notebooks in our secure PDF reading view.</p>
+            <div class="breadcrumb mt-4">
+                <a href="index.html">Home</a> &gt; <span>Student Zone</span> &gt; <span>Notebooks</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notebooks List -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="card-grid" id="notebooksGrid">
+                <!-- Notebooks will be dynamically injected here via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PDF Viewer Modal -->
+    <div class="pdf-modal" id="pdfModal">
+        <div class="pdf-modal-header">
+            <div class="pdf-modal-title" id="pdfTitle">Course Notebook</div>
+            <button class="pdf-modal-close" id="pdfCloseBtn">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div class="pdf-modal-body">
+            <iframe id="pdfFrame" src="about:blank" title="Notebook Viewer"></iframe>
+        </div>
+    </div>
+
+        <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo footer-logo">
+                        <div class="logo-icon" style="width: 32px; height: 32px;"><i data-lucide="monitor" style="width: 18px;"></i></div>
+                        Sankalp Academy
+                    </a>
+                    <p class="footer-desc">Providing premium computer education and professional training to build your future. Empowering youth with practical skills.</p>
+                    <div class="top-header-social" style="color: white;">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">All Courses</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Student Zone</h4>
+                    <ul class="footer-links">
+                        <li><a href="admission.html">Online Registration</a></li>
+                        <li><a href="notebook.html">Notebooks</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li><i data-lucide="map-pin" class="text-accent mt-1"></i> Hyderganj Market, Ayodhya, Uttar Pradesh</li>
+                        <li><i data-lucide="phone" class="text-accent mt-1"></i> +91 8808800266<br>+91 8808807636</li>
+                        <li><i data-lucide="mail" class="text-accent mt-1"></i> sankalpacademy.in@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sankalp Computer Academy. All rights reserved.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/notebooks-data.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Dynamically load notebooks
+        document.addEventListener('DOMContentLoaded', () => {
+            const notebooksGrid = document.getElementById('notebooksGrid');
+            const pdfModal = document.getElementById('pdfModal');
+            const pdfFrame = document.getElementById('pdfFrame');
+            const pdfTitle = document.getElementById('pdfTitle');
+            const pdfCloseBtn = document.getElementById('pdfCloseBtn');
+
+            if (notebooksGrid && window.notebooksData) {
+                const notebooksHTML = window.notebooksData.map((notebook, index) => `
+                    <div class="card">
+                        <div class="card-content" style="padding-top: var(--spacing-xl);">
+                            <div style="background: rgba(42, 95, 187, 0.1); width: 48px; height: 48px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; color: var(--primary); margin-bottom: 1rem;">
+                                <i data-lucide="book-open" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="card-title">${notebook.course} Notebook</h3>
+                            <p class="card-desc">${notebook.description}</p>
+                            <div class="card-actions" style="margin-top: 1.5rem; justify-content: flex-start;">
+                                <button class="btn btn-outline w-full" onclick="openPdf('${notebook.course}', '${notebook.driveLink}')" style="width: 100%;">
+                                    <i data-lucide="eye" class="w-4 h-4"></i> Read Notebook
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                notebooksGrid.innerHTML = notebooksHTML;
+                lucide.createIcons();
+            }
+
+            // Global function to open PDF
+            window.openPdf = (courseName, driveLink) => {
+                pdfTitle.textContent = `${courseName} Notebook`;
+                pdfFrame.src = driveLink;
+                pdfModal.classList.add('show');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            };
+
+            // Close Modal
+            const closePdf = () => {
+                pdfModal.classList.remove('show');
+                document.body.style.overflow = '';
+                // Optional: clear iframe to stop loading/playing
+                setTimeout(() => { pdfFrame.src = 'about:blank'; }, 300);
+            };
+
+            pdfCloseBtn.addEventListener('click', closePdf);
+            
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && pdfModal.classList.contains('show')) {
+                    closePdf();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
