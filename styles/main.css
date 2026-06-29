@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 :root {
+  color-scheme: light;
   /* Vibrant Light Theme Colors */
   --primary: #4f46e5;       /* Deep Indigo */
   --primary-hover: #4338ca;
