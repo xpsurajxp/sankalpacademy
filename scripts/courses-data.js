@@ -6,7 +6,7 @@ const coursesData = [
     category: 'Diploma',
     duration: '12 Months',
     fee: '6500₹',
-    image: 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     overview: 'Advance Diploma in Computer Applications is a comprehensive course covering everything from basics to programming, designed to make you proficient in modern office operations.',
     exams: [
       'Self Center',
@@ -28,7 +28,7 @@ const coursesData = [
     category: 'Diploma',
     duration: '06 Months',
     fee: '3500₹',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     overview: 'Diploma in Computer Applications is a foundational course to get you started with basic computer operations and Microsoft Office tools.',
     exams: [
       'Self Center', 'Theory Exam', 'Practical Exam', 'Project Work'
@@ -119,7 +119,7 @@ const coursesData = [
     category: 'Certification',
     duration: '03 Months',
     fee: '2500₹',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     overview: 'Government recognized basic IT literacy program for foundational computer skills required for many government jobs.',
     exams: [
       'Center - Sultanpur, Ayodhya (Own Choice, Many Centers)', 'Theory Exam'
@@ -138,7 +138,7 @@ const coursesData = [
     category: 'Certification',
     duration: '1 Year',
     fee: '15000₹',
-    image: 'https://images.unsplash.com/photo-1627398225081-24c89544eb1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+    image: 'assets/olevel.png',
     overview: 'NIELIT O-Level certification is a highly reputed program for a successful career in Information Technology.',
     exams: [
       'Theory Exam', 'Practical Exam', 'Project'

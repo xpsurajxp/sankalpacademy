@@ -24,7 +24,7 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-normal);
-  border: 1px solid #e2e8f0;
+  border: 1px solid #f1f5f9;
   text-align: center;
 }
 
@@ -37,7 +37,7 @@
 .feature-icon {
   width: 60px;
   height: 60px;
-  background: rgba(42, 95, 187, 0.1);
+  background: rgba(79, 70, 229, 0.1);
   color: var(--primary);
   border-radius: var(--radius-full);
   display: flex;
@@ -54,7 +54,7 @@
 /* Testimonials Section */
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--spacing-xl);
   margin-top: var(--spacing-xl);
 }
@@ -73,7 +73,7 @@
   top: 10px;
   right: 20px;
   font-size: 4rem;
-  color: rgba(42, 95, 187, 0.1);
+  color: rgba(79, 70, 229, 0.1);
   font-family: serif;
 }
 
@@ -106,8 +106,8 @@
 
 /* Enquiry Form Section */
 .enquiry-section {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  color: white;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+  color: var(--text-primary);
   padding: var(--spacing-3xl) 0;
 }
 
@@ -119,13 +119,13 @@
 }
 
 .enquiry-content h2 {
-  color: white;
+  color: var(--secondary);
   font-size: 2.5rem;
   margin-bottom: var(--spacing-md);
 }
 
 .enquiry-form {
-  background: white;
+  background: var(--surface);
   padding: var(--spacing-2xl);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
@@ -149,12 +149,14 @@
   border-radius: var(--radius-md);
   font-family: var(--font-body);
   transition: border-color var(--transition-fast);
+  background: var(--surface);
+  color: var(--text-primary);
 }
 
 .form-control:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(42, 95, 187, 0.1);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
 }
 
 @media (max-width: 992px) {
