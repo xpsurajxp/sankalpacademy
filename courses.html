@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="color-scheme" content="light">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Courses | Sankalp Computer Academy</title>
+    <title>All Courses | Sankalp Academy</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,72 +16,93 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/main.css?v=2">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/main.css?v=6">
+    <link rel="stylesheet" href="styles/home-extras.css?v=6">
     
     <style>
-        .page-header {
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
-            padding: var(--spacing-3xl) 0;
-            color: white;
+        .page-hero {
+            background: linear-gradient(135deg, var(--background) 0%, #e0e7ff 100%);
+            padding: 5rem 0 3rem 0;
+            color: var(--text-primary);
             text-align: center;
         }
         
-        .page-header h1 {
-            color: white;
-            font-size: 3rem;
+        .page-hero h1 {
+            color: var(--text-primary);
+            font-size: 2.5rem;
             margin-bottom: var(--spacing-sm);
         }
         
         .breadcrumb {
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--text-secondary);
             font-size: 0.875rem;
+            margin-top: 1.5rem;
         }
         
         .breadcrumb a {
-            color: white;
+            color: var(--primary);
+            font-weight: 500;
         }
         
         .breadcrumb a:hover {
-            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .filter-btn {
+            background: white;
+            border: 1px solid var(--border-color, #e2e8f0);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full, 9999px);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .filter-btn:hover {
+            background: #f1f5f9;
+            color: var(--primary);
+            border-color: #cbd5e1;
+        }
+        
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
     </style>
 </head>
 <body>
-        <!-- Top Header -->
-    <div class="top-header">
-        <div class="container top-header-flex">
-            <div class="top-email">
-                <span><i data-lucide="mail" class="w-4 h-4 mr-2"></i> <a href="mailto:sankalpacademy.in@gmail.com">sankalpacademy.in@gmail.com</a></span>
-            </div>
-            <div class="top-phones">
-                <span><i data-lucide="phone" class="w-4 h-4 mr-2"></i> <a href="https://wa.me/918808800266" target="_blank">+91 8808800266</a>, <a href="tel:+918808807636">+91 8808807636</a></span>
-            </div>
-        </div>
-    </div>
-
+    
         <!-- Main Header -->
     <header class="main-header" id="mainHeader">
-        <div class="container">
+        <div class="container header-container">
             <a href="index.html" class="logo">
-                Sankalp Academy
+                <div class="logo-text">
+                    <span class="logo-name">Sankalp Academy</span>
+                    <span class="logo-tagline">Practical Computer Education</span>
+                </div>
             </a>
 
             <nav class="nav-links">
                 <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
-                <div class="nav-item"><a href="about.html" class="nav-link">About Us</a></div>
                 <div class="nav-item"><a href="courses.html" class="nav-link">Courses</a></div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link">Student Zone <i data-lucide="chevron-down" class="inline w-4 h-4"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="admission.html" class="dropdown-item">Online Registration</a>
-                        <a href="notebook.html" class="dropdown-item">Notebooks</a>
-                    </div>
-                </div>
                 <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+                <div class="nav-item"><a href="about.html" class="nav-link">About Academy</a></div>
             </nav>
 
             <div class="header-actions">
-                <a href="admission.html" class="btn btn-primary">Apply Now</a>
+                <a href="contact.html" class="btn btn-primary">Apply Now</a>
             </div>
 
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -90,112 +111,257 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <div class="page-header">
-        <div class="container">
-            <h1>Our Courses</h1>
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <div class="container max-w-4xl mx-auto">
+            <h1>Explore Our Professional Computer Courses</h1>
+            <p class="text-lg text-secondary mb-6">Choose the right course and build practical skills with Sankalp Academy through practical training and expert guidance.</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mt-6">
+                <span class="bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-primary shadow-sm"><i data-lucide="book-open" class="inline w-4 h-4 mr-1"></i> 15+ Courses</span>
+                <span class="bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-primary shadow-sm"><i data-lucide="monitor-play" class="inline w-4 h-4 mr-1"></i> 100% Practical Training</span>
+                <span class="bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-primary shadow-sm"><i data-lucide="award" class="inline w-4 h-4 mr-1"></i> Certificate Available</span>
+            </div>
+            
             <div class="breadcrumb">
                 <a href="index.html">Home</a> &gt; <span>Courses</span>
             </div>
         </div>
     </div>
 
-    <!-- Courses List -->
-    <section class="section-padding">
+    <!-- Courses List Section -->
+    <section class="section-padding bg-background pb-20">
         <div class="container">
+            
+            <!-- Local SEO Trust Section -->
+            <div class="text-center mb-10 max-w-3xl mx-auto">
+                <h2 class="text-2xl font-bold text-primary font-heading mb-3">Computer Courses in Hyderganj</h2>
+                <p class="text-secondary text-sm">Sankalp Academy provides practical computer education and career-focused courses for students and professionals in Hyderganj.</p>
+            </div>
+            
+            <!-- Category Filter -->
+            <div class="filter-container" id="categoryFilter">
+                <button class="filter-btn active" data-filter="All">All Courses</button>
+                <button class="filter-btn" data-filter="Fundamentals">Computer Fundamentals</button>
+                <button class="filter-btn" data-filter="Accounting">Accounting & Office</button>
+                <button class="filter-btn" data-filter="Programming">Programming & Development</button>
+                <button class="filter-btn" data-filter="Design">Design & Multimedia</button>
+                <button class="filter-btn" data-filter="AI">AI & Modern Technology</button>
+                <button class="filter-btn" data-filter="Certification">Certification Courses</button>
+            </div>
+
+            <!-- Courses Grid -->
             <div class="card-grid" id="coursesGrid">
                 <!-- Courses will be dynamically injected here via JS -->
+            </div>
+            
+            <div id="noCoursesMsg" class="text-center py-12 hidden">
+                <i data-lucide="search-x" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+                <h3 class="text-xl font-bold text-primary mb-2">No courses found</h3>
+                <p class="text-secondary">Please try selecting a different category.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section-padding bg-white border-t border-gray-100">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary font-heading mb-3">Why Choose Sankalp Academy?</h2>
+                <p class="text-secondary">The preferred choice for computer education in Hyderganj</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="text-center p-6 border border-gray-100 rounded-xl shadow-sm bg-background">
+                    <div class="w-14 h-14 mx-auto bg-blue-50 text-primary rounded-full flex items-center justify-center mb-4">
+                        <i data-lucide="monitor-play" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-primary font-heading">Practical Lab Training</h3>
+                    <p class="text-sm text-secondary">Daily computer lab practice with dedicated systems for every student.</p>
+                </div>
+                <div class="text-center p-6 border border-gray-100 rounded-xl shadow-sm bg-background">
+                    <div class="w-14 h-14 mx-auto bg-green-50 text-secondary rounded-full flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-primary font-heading">Experienced Faculty</h3>
+                    <p class="text-sm text-secondary">Learn from expert teachers who provide personal guidance and support.</p>
+                </div>
+                <div class="text-center p-6 border border-gray-100 rounded-xl shadow-sm bg-background">
+                    <div class="w-14 h-14 mx-auto bg-orange-50 text-accent rounded-full flex items-center justify-center mb-4">
+                        <i data-lucide="wallet" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-primary font-heading">Affordable Courses</h3>
+                    <p class="text-sm text-secondary">High-quality computer education at fees that fit your budget.</p>
+                </div>
+                <div class="text-center p-6 border border-gray-100 rounded-xl shadow-sm bg-background">
+                    <div class="w-14 h-14 mx-auto bg-purple-50 text-purple-600 rounded-full flex items-center justify-center mb-4">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-primary font-heading">Career Guidance</h3>
+                    <p class="text-sm text-secondary">Skill development and guidance to help you land the right job.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission CTA Section -->
+    <section class="admission-cta bg-primary text-white py-16 text-center">
+        <div class="container max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4 font-heading">Confused Which Course is Right For You?</h2>
+            <p class="text-lg mb-8 text-blue-100">Talk to our team and choose the best course according to your career goal.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/918808800266?text=Hello%20Sankalp%20Academy%2C%20I%20want%20information%20about%20computer%20courses." target="_blank" class="btn bg-green-500 text-white hover:bg-green-600 border-none font-bold"><i data-lucide="message-circle" class="w-5 h-5 inline mr-2"></i> WhatsApp Now</a>
+                <a href="contact.html" class="btn bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold">Contact Us</a>
             </div>
         </div>
     </section>
 
         <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <a href="index.html" class="logo footer-logo">
-                        <div class="logo-icon" style="width: 32px; height: 32px;"><i data-lucide="monitor" style="width: 18px;"></i></div>
-                        Sankalp Academy
-                    </a>
-                    <p class="footer-desc">Providing premium computer education and professional training to build your future. Empowering youth with practical skills.</p>
-                    <div class="top-header-social" style="color: white;">
-                        <a href="#"><i data-lucide="facebook"></i></a>
-                        <a href="#"><i data-lucide="instagram"></i></a>
-                        <a href="#"><i data-lucide="youtube"></i></a>
-                    </div>
+    <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
+        <div class="container max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-1">
+                    <h3 class="text-white text-xl font-bold font-heading mb-4">Sankalp Academy</h3>
+                    <p class="text-sm mb-4">Hyderganj ki Trusted Computer Academy. Providing practical, job-ready digital education.</p>
                 </div>
                 
                 <div>
-                    <h4 class="footer-heading">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="courses.html">All Courses</a></li>
-                        <li><a href="admission.html">Admission</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                    <h4 class="text-white font-bold font-heading mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                        <li><a href="courses.html" class="hover:text-white transition">Courses</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">About Academy</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="footer-heading">Student Zone</h4>
-                    <ul class="footer-links">
-                        <li><a href="admission.html">Online Registration</a></li>
-                        <li><a href="notebook.html">Notebooks</a></li>
+                    <h4 class="text-white font-bold font-heading mb-4">Popular Courses</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="course-details.html?id=adca-plus" class="hover:text-white transition">ADCA Plus</a></li>
+                        <li><a href="course-details.html?id=tally-prime" class="hover:text-white transition">Tally Prime</a></li>
+                        <li><a href="course-details.html?id=web-development" class="hover:text-white transition">Web Development</a></li>
+                        <li><a href="course-details.html?id=python" class="hover:text-white transition">Python Programming</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="footer-heading">Contact Us</h4>
-                    <ul class="footer-contact">
-                        <li><i data-lucide="map-pin" class="text-accent mt-1"></i> Hyderganj Market, Ayodhya, Uttar Pradesh</li>
-                        <li><i data-lucide="phone" class="text-accent mt-1"></i> +91 8808800266<br>+91 8808807636</li>
-                        <li><i data-lucide="mail" class="text-accent mt-1"></i> sankalpacademy.in@gmail.com</li>
+                    <h4 class="text-white font-bold font-heading mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start"><i data-lucide="map-pin" class="w-4 h-4 mr-2 mt-1 flex-shrink-0"></i> Hyderganj, UP</li>
+                        <li class="flex items-center"><i data-lucide="phone" class="w-4 h-4 mr-2 flex-shrink-0"></i> <a href="tel:+918808807636" class="hover:text-white">+91 8808807636</a></li>
+                        <li class="flex items-center"><i data-lucide="mail" class="w-4 h-4 mr-2 flex-shrink-0"></i> <a href="mailto:sankalpacademy.in@gmail.com" class="hover:text-white">sankalpacademy.in@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2026 Sankalp Computer Academy. All rights reserved.</p>
-                <div style="display: flex; gap: 1rem;">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms & Conditions</a>
-                </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2026 Sankalp Academy. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918808800266?text=Hello%20Sankalp%20Academy%2C%20I%20want%20information%20about%20computer%20courses." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition z-50 animate-bounce-slow" aria-label="WhatsApp Us">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+    </a>
 
     <script src="scripts/courses-data.js"></script>
     <script src="scripts/main.js"></script>
     <script>
         lucide.createIcons();
 
-        // Dynamically load courses
         document.addEventListener('DOMContentLoaded', () => {
             const coursesGrid = document.getElementById('coursesGrid');
-            if (coursesGrid && window.coursesData) {
-                const coursesHTML = window.coursesData.map(course => `
-                    <div class="card">
-                        <div class="card-img-wrapper">
-                            <span class="card-badge">${course.category}</span>
-                            <img src="${course.image}" alt="${course.title}">
+            const noCoursesMsg = document.getElementById('noCoursesMsg');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            // Function to render courses
+            const renderCourses = (filterCategory = "All") => {
+                if (!coursesGrid || !window.coursesData) return;
+                
+                // Define the mapping of course IDs to filter categories
+                const categoryMapping = {
+                    'Fundamentals': ['dca', 'adca', 'ccc'],
+                    'Accounting': ['tally-prime', 'adfa', 'dfa', 'advance-excel'],
+                    'Programming': ['python', 'web-development', 'wordpress'],
+                    'Design': ['graphic-designing', 'dtp', 'animation-motion-graphics', 'video-editing-basic', 'video-editing-advance'],
+                    'AI': ['ai-generative'],
+                    'Certification': ['o-level', 'ccc', 'adca-plus']
+                };
+                
+                // Filter data
+                let filteredData = window.coursesData;
+                if (filterCategory !== "All") {
+                    filteredData = window.coursesData.filter(course => {
+                        const validIds = categoryMapping[filterCategory] || [];
+                        return validIds.includes(course.id);
+                    });
+                }
+                
+                // Show/hide no results message
+                if (filteredData.length === 0) {
+                    coursesGrid.innerHTML = '';
+                    noCoursesMsg.classList.remove('hidden');
+                    return;
+                } else {
+                    noCoursesMsg.classList.add('hidden');
+                }
+                
+                // Render HTML
+                const coursesHTML = filteredData.map(course => {
+                    // Use actual course image, fallback if missing
+                    const finalImg = course.image || `https://placehold.co/600x400/f8fafc/111827?text=${encodeURIComponent(course.shortTitle)}`;
+                    
+                    return `
+                    <div class="card flex flex-col h-full bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="card-img-wrapper relative h-48 overflow-hidden rounded-t-xl">
+                            <span class="card-badge absolute top-3 left-3 bg-primary text-white text-xs font-bold px-2 py-1 rounded shadow-sm z-10">${course.category}</span>
+                            <img src="${finalImg}" alt="${course.title}" class="w-full h-full object-cover">
                         </div>
-                        <div class="card-content">
-                            <h3 class="card-title">${course.shortTitle}</h3>
-                            <p class="card-desc">${course.overview}</p>
-                            <div class="card-actions">
-                                <span class="text-sm font-medium text-secondary">
-                                    <i data-lucide="clock" class="inline w-4 h-4 mr-1"></i> ${course.duration}
+                        <div class="card-content p-6 flex-grow flex flex-col">
+                            <h3 class="card-title text-[18px] font-semibold text-primary mb-2 font-heading">${course.shortTitle}</h3>
+                            <p class="card-desc text-[14px] text-secondary mb-4 flex-grow">${course.overview}</p>
+                            
+                            <div class="bg-gray-50 rounded-lg p-3 mb-4 flex flex-wrap gap-x-4 gap-y-2">
+                                <span class="text-sm font-medium text-primary flex items-center">
+                                    <i data-lucide="clock" class="w-4 h-4 mr-1"></i> ${course.duration || 'Flexible'}
                                 </span>
-                                <a href="course-details.html?id=${course.id}" class="text-primary font-medium hover:text-primary-hover">
+                                <span class="text-sm font-medium text-primary flex items-center">
+                                    <i data-lucide="award" class="w-4 h-4 mr-1"></i> Certificate Available
+                                </span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between mt-auto pt-2">
+                                <a href="https://wa.me/918808800266?text=I%20want%20to%20enquire%20about%20${encodeURIComponent(course.shortTitle)}." target="_blank" class="text-sm font-medium text-success hover:underline flex items-center">
+                                    <i data-lucide="message-circle" class="w-4 h-4 mr-1"></i> Enquire Now
+                                </a>
+                                <a href="course-details.html?id=${course.id}" class="btn bg-primary text-white hover:bg-primary-hover text-sm px-4 py-2 flex items-center rounded transition">
                                     View Details &rarr;
                                 </a>
                             </div>
                         </div>
                     </div>
-                `).join('');
+                `}).join('');
+                
                 coursesGrid.innerHTML = coursesHTML;
-                lucide.createIcons(); // Re-initialize icons for newly added HTML
-            }
+                lucide.createIcons();
+            };
+            
+            // Initial render
+            renderCourses();
+            
+            // Filter logic
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active class
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Render filtered
+                    renderCourses(btn.dataset.filter);
+                });
+            });
         });
     </script>
 </body>

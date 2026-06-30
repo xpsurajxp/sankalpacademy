@@ -42,6 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Active Link Highlight
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinksList = document.querySelectorAll('.nav-link');
+    navLinksList.forEach(link => {
+        const linkPath = link.getAttribute('href').split('#')[0];
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        }
+    });
+
     // Sticky Header
     const mainHeader = document.getElementById('mainHeader');
     if (mainHeader) {
